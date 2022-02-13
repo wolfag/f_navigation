@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:f_navigation/detail_screen.dart';
 import 'package:f_navigation/main_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Transition',
-      home: MainScreen(),
+      initialRoute: MainScreen.routeName,
+      routes: {
+        MainScreen.routeName: (_) => const MainScreen(),
+        DetailScreen.routeName: (_) => DetailScreen(),
+      },
+      // home: MainScreen(),
     );
   }
 }
